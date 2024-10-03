@@ -1,0 +1,1 @@
+font=("New Times Roman", 20, "bold")
