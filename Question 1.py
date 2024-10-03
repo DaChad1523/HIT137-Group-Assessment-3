@@ -12,14 +12,14 @@ class Weddit_GUI:
         self.frame.pack()
         self.state = False
         self.Title = Label(self.tk, text="Welcome to Weddit!", font=("Comic Sans MS", 30, "bold"))
-        self.Title.pack()
+        self.Title.pack(pady=10)
 
-        self.Settings_Buttons = Button(self.frame, text="Settings")
-        self.Genre_Buttons = Button(self.frame, text="Genre")
-        self.Report_Buttons = Button(self.frame, text="Report")
-        self.Settings_Buttons.pack()
-        self.Genre_Buttons.pack()
-        self.Report_Buttons.pack()
+        self.Settings_Buttons = Button(self.tk, text="Settings")
+        self.Genre_Buttons = Button(self.tk, text="Genre")
+        self.Report_Buttons = Button(self.tk, text="Report")
+        self.Settings_Buttons.pack(pady=10)
+        self.Genre_Buttons.pack(pady=10)
+        self.Report_Buttons.pack(pady=10)
 
         #self.tk(self.ListOfButtons)
         self.tk.bind("<F11>", self.toggle_fullscreen)
