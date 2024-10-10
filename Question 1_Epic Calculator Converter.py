@@ -84,6 +84,33 @@ class ConverterApp(Tk):
         #For Imperial Conversion (WIP)
         self.Ivalue_label = ttk.Label(self, text="Value:")
         self.Ivalue_label.grid(column=3, row=0, padx=10, pady=10)
+        
+        self.Mvalue_entry = ttk.Entry(self)
+        self.Mvalue_entry.grid(column=4, row=0, padx=10, pady=10)
+        
+        self.from_unit_label = ttk.Label(self, text="From Unit:")
+        self.from_unit_label.grid(column=3, row=1, padx=10, pady=10)
+
+        self.from_unit = StringVar()
+        self.from_unit_combobox = ttk.Combobox(self, textvariable=self.from_unit)
+        self.from_unit_combobox['values'] = ('Inch', 'Foot', 'Mile')
+        self.from_unit_combobox.grid(column=4, row=1, padx=10, pady=10)
+
+        self.to_unit_label = ttk.Label(self, text="To Unit:")
+        self.to_unit_label.grid(column=3, row=2, padx=10, pady=10)
+
+        self.to_unit = StringVar() #This box can output
+        self.to_unit_combobox = ttk.Combobox(self, textvariable=self.to_unit)
+        self.to_unit_combobox['values'] = ('Inch', 'Foot', 'Mile')
+        self.to_unit_combobox.grid(column=4, row=2, padx=10, pady=10)
+
+        self.convert_button = ttk.Button(self, text="Convert", command=self.ImperialConvert)
+        self.convert_button.grid(column=3, row=3, columnspan=2, padx=10, pady=10)
+
+        self.result_label = ttk.Label(self, text="") #poop out the result located botton of the convert
+        self.result_label.grid(column=4, row=4, columnspan=2, padx=10, pady=10)
+
+
 
 
     def MetricConvert(self): #Bunch of methods and calculation
@@ -104,6 +131,27 @@ class ConverterApp(Tk):
                 result = MetricMeasurementConverter.m_to_cm(value)
             elif from_unit == 'cm' and to_unit == 'mm':
                 result = MetricMeasurementConverter.cm_to_mm(value)
+            else:
+                raise ValueError("Invalid conversion")
+
+            self.result_label.config(text=f"Result: {result} {to_unit}")
+        except ValueError as e:
+            showerror(title="Error", message=str(e))
+
+    def ImperialConvert(self):
+        try:
+            value = float(self.Mvalue_entry.get())
+            from_unit = self.from_unit.get()
+            to_unit = self.to_unit.get()
+
+            if from_unit == 'Inch' and to_unit == 'Foot':
+                result = ImperialMeasurementConverter.Inch_to_Foot(value)
+            elif from_unit == 'Foot' and to_unit == 'Mile':
+                result = ImperialMeasurementConverter.Foot_to_Mile(value)
+            elif from_unit == 'Mile' and to_unit == 'Foot':
+                result = ImperialMeasurementConverter.Mile_to_Foot(value)
+            elif from_unit == 'Foot' and to_unit == 'Inch':
+                result = ImperialMeasurementConverter.Mile_to_Foot(value)
             else:
                 raise ValueError("Invalid conversion")
 
