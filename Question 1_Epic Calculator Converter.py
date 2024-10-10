@@ -85,8 +85,8 @@ class ConverterApp(Tk):
         self.Ivalue_label = ttk.Label(self, text="Value:")
         self.Ivalue_label.grid(column=3, row=0, padx=10, pady=10)
         
-        self.Mvalue_entry = ttk.Entry(self)
-        self.Mvalue_entry.grid(column=4, row=0, padx=10, pady=10)
+        self.Ivalue_entry = ttk.Entry(self)
+        self.Ivalue_entry.grid(column=4, row=0, padx=10, pady=10)
         
         self.from_unit_label = ttk.Label(self, text="From Unit:")
         self.from_unit_label.grid(column=3, row=1, padx=10, pady=10)
@@ -140,7 +140,7 @@ class ConverterApp(Tk):
 
     def ImperialConvert(self):
         try:
-            value = float(self.Mvalue_entry.get())
+            value = float(self.Ivalue_entry.get())
             from_unit = self.from_unit.get()
             to_unit = self.to_unit.get()
 
