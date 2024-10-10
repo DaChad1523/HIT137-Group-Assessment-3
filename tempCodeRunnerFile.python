@@ -1,16 +1,61 @@
-import tkinter as tk
+#Section 1 C
+"""
+Input1 = int(input("First Number pls: "))
+Input2 = int(input("Another pls: "))
+print ("the sum is ", Input1 + Input2)
+"""
+#Section 1 E
+"""
+Apple = 1
+Pear = 0
+Input1 = input("Apple or Pear? ")
+if Input1 == "Apple":
+    if Apple == 0:
+        print("no apples")
+    else:
+        print("we got apples")
+elif Input1 == "Pear":
+    if Pear == 0:
+        print("no pears")
+    else:
+        print("we got pears")
+"""
+#Section 2 A (WIP)
+"""
+Input1 = int(input("Number pls: "))
+if Input1 == float:
+    print(float(Input1)) 
+else:
+    print("nope")
+"""
+#Section 2 B
 
-# Create the main window
-root = tk.Tk()
-root.title("My Tkinter Window")
+Input1 = input("Number pls: ")
+Input2 = input("Another pls:")
 
-# Create a title label
-title_label = tk.Label(root, text="This is the Title", font=("Helvetica", 16))
-title_label.pack(pady=10)  # Add some padding to separate the title from the button
+def add():
+    x = int(Input1)
+    y = int(Input2)
+    print(int(x + y))
+def min():
+    x = Input1
+    y = Input2
+    print(int(x - y))
+def mul():
+    x = Input1
+    y = Input2
+    print(int(x * y))
+def div():
+    x = Input1
+    y = Input2
+    print(int(x / y))
 
-# Create a button
-my_button = tk.Button(root, text="Click Me!", command=lambda: print("Button Clicked"))
-my_button.pack(pady=10)  # Add some padding to separate the button from other elements
-
-# Run the application
-root.mainloop()
+Input3 = input("add, min, mul or div: ")
+if Input3 == "add":
+    add()
+elif Input3 == "min":
+    min()
+elif Input3 == "mul":
+    mul()
+elif Input3 == "div":
+    div()
