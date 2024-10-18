@@ -20,3 +20,5 @@ The Submit method is called when the "Post" button is clicked. It retrieves the 
 The if name == 'main': block at the end of the code is the entry point of the program. It creates an instance of the Weddit_UIv2 class called Weddit_UI and starts the main event loop of the Tkinter application by calling the mainloop method on the tk attribute of the Weddit_UI instance. This allows the application to run and respond to user interactions until it is closed.
 
 Overall, the Weddit_UIv2 class provides a basic user interface for a Reddit-like application. It includes a title, buttons for navigation, an entry area for posting messages, and a display area to show the posted messages. The code demonstrates the usage of various Tkinter widgets such as Frame, Label, Button, Text, and the pack geometry manager to arrange the widgets within the window. It also showcases how to retrieve and insert text into the Text widget and how to enable/disable the widget state.
+
+Question 1_Epic Calculator Converter
