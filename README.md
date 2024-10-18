@@ -25,24 +25,29 @@ Question 1_Epic Calculator Converter
 
 The calculator converter gui code script creates a graphical user interface (GUI) for a measurement converter application using the Tkinter library. The application allows users to convert metric measurements between different units such as millimeters (mm), centimeters (cm), meters (m), and kilometers (km). The code is organized into several classes and methods to handle the conversion logic and GUI components.
 Functionality:
+
 1.	Importing Libraries: 
+
 o	The code starts by importing the necessary libraries: tkinter for creating the GUI and tkinter.messagebox for displaying error messages.
 
-3.	MetricMeasurementConverter Class: 
+2.	MetricMeasurementConverter Class:
+ 
 o	This class contains static methods for converting metric measurements between different units.
 
 o	Each method takes a value as input and returns the converted value based on the specific conversion formula.
 
 o	The @staticmethod decorator is used to indicate that these methods can be called without creating an instance of the class.
 
-5.	ImperialMeasurementConverter Class: 
+3.	ImperialMeasurementConverter Class:
+
 o	This class is similar to the MetricMeasurementConverter class but is intended for imperial measurement conversions.
 
 o	It includes static methods for converting between inches, feet, and miles.
 
 o	However, the code for this class is commented out, indicating that it is a work in progress and not currently utilized in the application.
 
-7.	ConverterApp Class: 
+4.	ConverterApp Class:
+
 o	This class represents the main application window and inherits from the Tk class provided by Tkinter.
 
 o	The __init__ method is the constructor for the class, which initializes the window, sets its title and size, and calls the create_widgets method to create the GUI components.
@@ -55,7 +60,8 @@ o	If an invalid conversion is attempted or an error occurs, an error message is 
 
 o	The code for the ImperialConvert method is commented out, indicating that it is not currently implemented.
 
-9.	Main Program: 
+5.	Main Program:
+
 o	The if __name__ == "__main__": block is the entry point of the program.
 
 o	It creates an instance of the ConverterApp class, which initializes the application window and starts the main event loop using the mainloop method.
