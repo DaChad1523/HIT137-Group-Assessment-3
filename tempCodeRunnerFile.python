@@ -1,61 +1,63 @@
-#Section 1 C
-"""
-Input1 = int(input("First Number pls: "))
-Input2 = int(input("Another pls: "))
-print ("the sum is ", Input1 + Input2)
-"""
-#Section 1 E
-"""
-Apple = 1
-Pear = 0
-Input1 = input("Apple or Pear? ")
-if Input1 == "Apple":
-    if Apple == 0:
-        print("no apples")
-    else:
-        print("we got apples")
-elif Input1 == "Pear":
-    if Pear == 0:
-        print("no pears")
-    else:
-        print("we got pears")
-"""
-#Section 2 A (WIP)
-"""
-Input1 = int(input("Number pls: "))
-if Input1 == float:
-    print(float(Input1)) 
-else:
-    print("nope")
-"""
-#Section 2 B
+import tkinter as tk
 
-Input1 = input("Number pls: ")
-Input2 = input("Another pls:")
+def add_post(post_content):
+    posts_display.config(state="normal")
+    posts_display.insert(tk.END, f"Post: {post_content}\n")
+    posts_display.config(state="disabled")
+    post_entry.delete("1.0", tk.END)
 
-def add():
-    x = int(Input1)
-    y = int(Input2)
-    print(int(x + y))
-def min():
-    x = Input1
-    y = Input2
-    print(int(x - y))
-def mul():
-    x = Input1
-    y = Input2
-    print(int(x * y))
-def div():
-    x = Input1
-    y = Input2
-    print(int(x / y))
+root = tk.Tk()
+root.title("Teams-like Post Generator")
+root.geometry("600x400")
 
-Input3 = input("add, min, mul or div: ")
-if Input3 == "add":
-    add()
-elif Input3 == "min":
-    min()
-elif Input3 == "mul":
-    mul()
-elif Input3 == "div":
-    div()
+# Text Entry Area
+entry_frame = tk.Frame(root)
+entry_frame.pack(side="top", fill="x", padx=10, pady=10)
+
+post_entry = tk.Text(entry_frame, height=5, wrap="word")
+post_entry.pack(side="left", fill="x", expand=True, padx=5, pady=5)
+
+# Submit Button
+submit_button = tk.Button(entry_frame, text="Post", command=lambda: add_post(post_entry.get("1.0", tk.END)))
+submit_button.pack(side="right", padx=5, pady=5)
+
+# Display Area for Posts
+posts_frame = tk.Frame(root)
+posts_frame.pack(side="top", fill="both", expand=True, padx=10, pady=10)
+
+posts_display = tk.Text(posts_frame, state="disabled", wrap="word")
+posts_display.pack(side="left", fill="both", expand=True, padx=5, pady=5)
+
+root.mainloop()
+root = tk.Tk()
+root.title("YouTube-like Interface")
+root.geometry("800x600")
+
+# Navigation Bar
+nav_bar = tk.Frame(root, bg="red", height=50)
+nav_bar.pack(side="top", fill="x")
+
+search_bar = tk.Entry(nav_bar, width=50)
+search_bar.pack(side="left", padx=10, pady=10)
+
+search_button = tk.Button(nav_bar, text="Search")
+search_button.pack(side="left", padx=10, pady=10)
+
+# Video Display Area
+video_frame = tk.Frame(root, bg="black")
+video_frame.pack(side="top", fill="both", expand=True)
+
+video_label = tk.Label(video_frame, text="Video Display Area", bg="black", fg="white")
+video_label.pack(expand=True)
+
+# Sidebar
+sidebar = tk.Frame(root, bg="gray", width=200)
+sidebar.pack(side="left", fill="y")
+
+home_button = tk.Button(sidebar, text="Home")
+home_button.pack(pady=10)
+
+subscriptions_button = tk.Button(sidebar, text="Subscriptions")
+subscriptions_button.pack(pady=10)
+
+root.mainloop()
