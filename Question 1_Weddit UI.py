@@ -50,7 +50,7 @@ class Weddit_UIv2:
         self.orange_line()
         self.Buttons()
         self.create_entry_area()
-        self.create_posts_display()
+        self.Display_Feed()
 
     #Draw an orange line on top
     def orange_line(self, num_lines=5, lines_height=5):
@@ -74,32 +74,34 @@ class Weddit_UIv2:
         button2 = tk.Button(Button_frame, text= 'Home')
         button2.pack(side='left', padx=5)
 
-        button3 = tk.Button(Button_frame, text= '???')
+        button3 = tk.Button(Button_frame, text= '???', command=self.tk.destroy)
         button3.pack(side='left', padx=5)
 
+    #A box allows you to type and post it on a display feed
     def create_entry_area(self):
         entry_frame = tk.Frame(self.tk)
-        entry_frame.pack(side="top", fill="x", padx=10, pady=10)
+        entry_frame.pack(side='top', fill='none', padx=10, pady=10)
 
-        self.post_entry = tk.Text(entry_frame, height=10, wrap="word")
-        self.post_entry.pack(side="left", fill="x", expand=True, padx=10, pady=10)
+        self.post_entry = tk.Text(entry_frame, height=5, width=800, wrap='word')
+        self.post_entry.pack(side='top', fill='none', expand=True, padx=10, pady=10)
 
-        submit_button = tk.Button(entry_frame, text="Post", command=self.add_post)
-        submit_button.pack(side="right", padx=10, pady=10)
+        Post_Button = tk.Button (text= 'Post', command=self.Submit)
+        Post_Button.pack(side='top', padx=10, pady= 10)
 
-    def create_posts_display(self):
-        posts_frame = tk.Frame(self.tk)
-        posts_frame.pack(side="top", fill="both", expand=True, padx=10, pady=10)
 
-        self.posts_display = tk.Text(posts_frame, state="disabled", wrap="word")
-        self.posts_display.pack(side="left", fill="both", expand=False, padx=10, pady=10)
+    def Display_Feed(self):
+        Display_Feed = tk.Frame(self.tk)
+        Display_Feed.pack(side='bottom', fill='none', padx= 10, pady= 10)
 
-    def add_post(self):
-        post_content = self.post_entry.get("1.0", tk.END)
-        self.posts_display.config(state="normal")
-        self.posts_display.insert(tk.END, f"You: {post_content}\n")
-        self.posts_display.config(state="disabled")
-        self.post_entry.delete("1.0", tk.END)
+        self.Display = tk.Text(Display_Feed, height=500, width=500, wrap='word')
+        self.Display.pack(side='bottom', fill='none', expand=False)
+    
+    def Submit(self):
+        post = self.post_entry.get('1.0', tk.END)
+        self.Display.config(state='normal')
+        self.Display.insert(tk.END, f"You: {post}\n")
+        self.Display.config(state='disabled')
+        self.post_entry.delete('1.0', tk.END)
 
 
 
