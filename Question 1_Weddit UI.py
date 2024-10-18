@@ -1,7 +1,7 @@
 #Question1
 #We will be creating a UI APP of reddit unfunny version
-from tkinter import * 
-
+import tkinter as tk
+"""
 
 class Weddit_GUI:
 
@@ -25,13 +25,6 @@ class Weddit_GUI:
         self.tk.bind("<F11>", self.toggle_fullscreen)
         self.tk.bind("<Escape>", self.end_fullscreen)
 
-    """
-    def ListOfButtons(self): #For user going to different page/window
-
-        self.Settings_Buttons = Button(self.topFrame, text="Settings")
-        self.Genre_Buttons = Button(self.topFrame, text="Genre")
-        self.Report_Buttons = Button(self.topFrame, text="Report")
-    """
     def toggle_fullscreen(self, event=None): #"event=None" allows Toggle and end fullscreen script.
         self.state = not self.state  
         self.tk.attributes("-fullscreen", self.state)
@@ -45,3 +38,45 @@ class Weddit_GUI:
 if __name__ == '__main__':
     Weddit = Weddit_GUI()
     Weddit.tk.mainloop()
+"""
+class Weddit_UIv2():
+    def __init__(self):
+        self.tk=tk.Tk()
+        self.tk.title("Weddit UI ")
+        self.tk.geometry('800x600')
+
+
+"""
+root = tk.Tk()
+root.title("YouTube-like Interface")
+root.geometry("800x600")
+
+# Navigation Bar
+nav_bar = tk.Frame(root, bg="red", height=50)
+nav_bar.pack(side="top", fill="x")
+
+search_bar = tk.Entry(nav_bar, width=50)
+search_bar.pack(side="left", padx=10, pady=10)
+
+search_button = tk.Button(nav_bar, text="Search")
+search_button.pack(side="left", padx=10, pady=10)
+
+# Video Display Area
+video_frame = tk.Frame(root, bg="black")
+video_frame.pack(side="top", fill="both", expand=True)
+
+video_label = tk.Label(video_frame, text="Video Display Area", bg="black", fg="white")
+video_label.pack(expand=True)
+
+# Sidebar
+sidebar = tk.Frame(root, bg="gray", width=200)
+sidebar.pack(side="left", fill="y")
+
+home_button = tk.Button(sidebar, text="Home")
+home_button.pack(pady=10)
+
+subscriptions_button = tk.Button(sidebar, text="Subscriptions")
+subscriptions_button.pack(pady=10)
+
+root.mainloop()
+"""

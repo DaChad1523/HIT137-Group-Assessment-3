@@ -80,7 +80,7 @@ class ConverterApp(Tk):
 
         self.result_label = ttk.Label(self, text="") #poop out the result located botton of the convert
         self.result_label.grid(column=0, row=4, columnspan=2, padx=10, pady=10)
-
+    """
         #For Imperial Conversion (WIP)
         self.Ivalue_label = ttk.Label(self, text="Value:")
         self.Ivalue_label.grid(column=3, row=0, padx=10, pady=10)
@@ -109,9 +109,7 @@ class ConverterApp(Tk):
 
         self.result_label = ttk.Label(self, text="") #poop out the result located botton of the convert
         self.result_label.grid(column=4, row=4, columnspan=2, padx=10, pady=10)
-
-
-
+    """
 
     def MetricConvert(self): #Bunch of methods and calculation
         try:
@@ -137,7 +135,7 @@ class ConverterApp(Tk):
             self.result_label.config(text=f"Result: {result} {to_unit}")
         except ValueError as e:
             showerror(title="Error", message=str(e))
-
+    """
     def ImperialConvert(self):
         try:
             value = float(self.Ivalue_entry.get())
@@ -158,7 +156,7 @@ class ConverterApp(Tk):
             self.result_label.config(text=f"Result: {result} {to_unit}")
         except ValueError as e:
             showerror(title="Error", message=str(e))
-
+    """
 if __name__ == "__main__":
     app = ConverterApp()
     app.mainloop() #Keep it opened
