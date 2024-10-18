@@ -30,25 +30,36 @@ o	The code starts by importing the necessary libraries: tkinter for creating the
 
 3.	MetricMeasurementConverter Class: 
 o	This class contains static methods for converting metric measurements between different units.
+
 o	Each method takes a value as input and returns the converted value based on the specific conversion formula.
+
 o	The @staticmethod decorator is used to indicate that these methods can be called without creating an instance of the class.
 
 5.	ImperialMeasurementConverter Class: 
 o	This class is similar to the MetricMeasurementConverter class but is intended for imperial measurement conversions.
+
 o	It includes static methods for converting between inches, feet, and miles.
+
 o	However, the code for this class is commented out, indicating that it is a work in progress and not currently utilized in the application.
 
 7.	ConverterApp Class: 
 o	This class represents the main application window and inherits from the Tk class provided by Tkinter.
+
 o	The __init__ method is the constructor for the class, which initializes the window, sets its title and size, and calls the create_widgets method to create the GUI components.
+
 o	The create_widgets method is responsible for creating and arranging the various widgets (labels, entry fields, comboboxes, and buttons) in the application window using the Tkinter grid layout system.
+
 o	The MetricConvert method is called when the "Convert" button is clicked. It retrieves the user input values, determines the appropriate conversion method based on the selected units, and updates the result label with the converted value.
+
 o	If an invalid conversion is attempted or an error occurs, an error message is displayed using the showerror function from tkinter.messagebox.
+
 o	The code for the ImperialConvert method is commented out, indicating that it is not currently implemented.
 
 9.	Main Program: 
 o	The if __name__ == "__main__": block is the entry point of the program.
+
 o	It creates an instance of the ConverterApp class, which initializes the application window and starts the main event loop using the mainloop method.
+
 o	The mainloop method keeps the application running and responsive to user interactions until the window is closed.
 
 The code follows a modular and object-oriented approach, separating the conversion logic into separate classes (MetricMeasurementConverter and ImperialMeasurementConverter) and encapsulating the GUI functionality within the ConverterApp class. This design allows for easy extensibility and maintainability of the code.
