@@ -1,5 +1,6 @@
 # HIT137-Group-Assessment-3 Report
 Question 1_Weddit UI
+
 The Weddit_UIv2 class represents a graphical user interface (GUI) for a Reddit-like application called "Weddit." The class is implemented using the Tkinter library, which is a standard GUI library for Python.
 The init method is the constructor of the class, and it initializes the main window of the application. It sets the window title to "Weddit UI V2" and sets the window size to 1600x1000 pixels. The constructor then calls several methods to create different components of the user interface.
 The orange_line method is responsible for drawing orange lines at the top of the window. It takes two optional parameters: num_lines, which specifies the number of lines to draw (default is 5), and lines_height, which specifies the height of each line (default is 5). The method creates a frame for each line, sets its background color to orange, and packs it at the top of the window using the pack geometry manager with the fill='x' option to make the lines stretch horizontally.
